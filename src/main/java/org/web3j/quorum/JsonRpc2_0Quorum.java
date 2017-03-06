@@ -129,4 +129,14 @@ public class JsonRpc2_0Quorum extends JsonRpc2_0Web3j implements Quorum {
                 web3jService,
                 Voter.class);
     }
+
+    @Override
+    public Request<?, PrivateKey> quorumPrivateKey() {
+        return new Request<>(
+                "quorum_privateKey",
+                Collections.<String>emptyList(),
+                ID,
+                web3jService,
+                PrivateKey.class);
+    }
 }
